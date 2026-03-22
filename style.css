@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+html {
+    background-color: #1E2022;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    padding: 40px 0 40px 0;
+    color: #ffffff;
+    background-color: #1E2022;
+}
+
+nav {
+    background-color: #52616B;
+    padding: 10px 0 10px 0;
+    border-radius: 0 0 10px 10px;
+    margin: 0 32% 0 32%;
+}
+
+nav a {
+    font-weight: bold;
+    border-radius: 10px;
+    color: #000;
+    text-decoration: none;
+    padding: 20px 30px 20px 30px;
+    display: inline-block;
+    transition: background-color 0.4s, color 0.2s, transform 0.4s;
+}
+
+nav a:hover {
+    background-color: #1E2022;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.active {
+    background-color: #1E2022;
+    color: white;
+    transform: translateY(-3px);
+}
+
+body {
+    background-color: #C9D6DF;;
+}
+
+.content {
+    margin: 40px 100px 40px 100px;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #F0F5F9;
+}
+
+.content h2, .content h3 ,.content p{
+    padding: 10px;
+}
+
+.content ul {
+    padding: 0px 40px 20px 60px;
+}
+
+.content li {
+    padding: 5px 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 20px 0;
+}
+
+#resume{
+    margin: 40px 100px 40px 100px;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #F0F5F9;
+}
+
+#resume h1, h2{
+    margin: 20px;
+}
+    
+#resume p {
+    margin-left: 40px;
+}
+
+#resume ol, ul {
+    margin-left: 40px;
+}
+
+#feedback{
+    text-align: center;
+    margin: 40px 35% 40px 35%;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #F0F5F9;
+}
+
+#feedback ul{
+    text-align: center;
+    margin: auto;
+}
+
+#feedback p{
+    margin: 10px 0 30px 0;
+}
+
+#feedback h3{
+    margin: 10px 0 10px 0;
+}
+
+#feedback label{
+    margin: 10px 0 10px 0;
+}
+
+#contact {
+    text-align: center;
+    margin: 40px 35% 40px 35%;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #F0F5F9;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #1E2022;
+    color: #fff;
+    margin-top: 20px;
+}

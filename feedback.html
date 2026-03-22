@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="icon" type="image/png" href="images/icon-feedback.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Give Me Your Feedback!</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html" class="active">Feedback</a>
+        </nav>
+    </header>
+
+    <section id="feedback">
+        <article>
+            <p><b><i>Give me your feedback using the form below:</i></b></p>
+            <form>
+
+                <h3>How Good Is My Website?:</h3>
+
+                <ul>
+                <input type="radio" id="r1" name="rating" value="1" required>
+                <label for="5">(5) superlative</label>
+                </ul>
+                
+                <ul>
+                <input type="radio" id="r2" name="rating" value="2">
+                <label for="4">(4) nice</label>
+                </ul>
+
+                <ul>
+                <input type="radio" id="r3" name="rating" value="3">
+                <label for="3">(3) meh</label>
+                </ul>
+
+                <ul>
+                <input type="radio" id="r4" name="rating" value="4">
+                <label for="2">(2) uhmm..</label>
+                </ul>
+
+                <ul>
+                <input type="radio" id="r5" name="rating" value="5">
+                <label for="1">(1) Yikes</label>
+                </ul>
+
+                <br>
+
+                <label for="comment">Additional Comment <i>(optional)</i>:</label>
+                <br>
+                <textarea id="comment" name="comment" rows="4" cols="30"></textarea>
+
+                <br><br>
+
+                <input type="submit" value="Submit Feedback">
+
+            </form>
+        </article>
+    </section>
+
+    <br>
+    <hr>
+
+    <footer>
+        <p>&copy; 2005-2026 Abram. All rights reserved.</p> 
+    </footer>
+
+</body>
+
+</html>
