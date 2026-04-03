@@ -2,81 +2,119 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    
+    font-family: 'Montserrat', sans-serif;  
 }
 
+.no-transition * {
+    transition: none !important;
+}
+
+:root {
+    --text-color: #000000;
+    --text-color-rev: #ffffff;
+    --vibe-color: #b9ffc5;
+    --bg-color: #ffffff;
+    --bg-color2: #f0f0f0;
+}
+
+.dark-mode {
+    --text-color: #ffffff;
+    --text-color-rev: #000000;
+    --vibe-color: #2c3d2f;
+    --bg-color: #141414;
+    --bg-color2: #242424;
+}
+
+
 html {
-    background-color: #b9ffc5;
+    background: var(--vibe-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 header {
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.5em;
-    padding: 40px 0 40px 0;
-    color: #000000;
-    background-color: #b9ffc5;
-}
-
 nav {
-    background-color: #b9ffc5;
+    background-color: var(--vibe-color);
     padding: 10px 0 10px 0;
     border-radius: 0 0 10px 10px;
     margin: 0 32% 0 32%;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav a {  
     font-weight: bold;
     border-radius: 10px;
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
     padding: 20px 30px 20px 30px;
     display: inline-block;
-    transition: background-color 0.4s, color 0.2s, transform 0.4s, border 0.2s;
+    transition: background-color 0.2s, color 0.2s, transform 0.4s, border 0.2s ease;
 }
 
 nav a:hover {
-    background-color: #ffffff;
-    color: black;
+    background-color: var(--text-color-rev);
     transform: translateY(-3px);
 }
 
+
 .active {
-    background-color: #ffffff;
-    color: black;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     transform: translateY(-3px);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navnav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1%;
+    color: var(--text-color);
+    background-color: var(--vibe-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navnav h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}
+
+.navnav img {
+    margin-left: auto;
+    width:4%;
 }
 
 .darkmodebutton {
     width: 4%;
-    position: absolute;
-    background-color: white;
+    background-color: var(--bg-color);
     padding: 10px;
     border-radius: 50%;
-    left: 95%;
-    top: 25px;
-    transition: background-color 0.4s, transform 0.2s;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, filter 0.2s ease;
 }
 
 .darkmodebutton:hover {
-    background-color: yellow;
     transform: scale(110%);
+    filter: invert(1);
 }
 
 body {
-    transition: 0.3s;
-    background-color: #ffffff;
+    transition: background-color 0.2s, color 0.2s ease;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .content {
-    margin: 40px 100px 40px 100px;
+    margin: 40px 10% 40px 10%;
     padding: 20px;
-    border: 2px solid #000;
+    border: 3px solid var(--text-color);
     border-radius: 10px;
-    background-color: #F0F5F9;
+    background-color: var(--bg-color2);
+    transition: background-color 0.2s, border 0.2s ease;
 }
 
 .content h2, .content h3 ,.content p{
@@ -94,16 +132,16 @@ body {
 hr {
     border: 0;
     height: 1px;
-    background-color: #000;
+    background-color: var(--text-color);
     margin: 20px 0;
 }
 
 #resume{
     margin: 40px 100px 40px 100px;
     padding: 20px;
-    border: 2px solid #000;
+    border: 2px solid var(--text-color);
     border-radius: 10px;
-    background-color: #F0F5F9;
+    background-color: var(--bg-color2);
 }
 
 #resume h1, h2{
@@ -122,9 +160,9 @@ hr {
     text-align: center;
     margin: 40px 35% 40px 35%;
     padding: 20px;
-    border: 2px solid #000;
+    border: 2px solid var(--text-color);
     border-radius: 10px;
-    background-color: #F0F5F9;
+    background-color: var(--bg-color2);
 }
 
 #feedback ul{
@@ -148,15 +186,38 @@ hr {
     text-align: center;
     margin: 40px 35% 40px 35%;
     padding: 20px;
-    border: 2px solid #000;
+    border: 2px solid var(--text-color);
     border-radius: 10px;
-    background-color: #F0F5F9;
+    background-color: var(--bg-color2);
 }
 
 footer {
     text-align: center;
     padding: 40px;
-    background-color: #b9ffc5;
-    color: black;
+    background-color: var(--vibe-color);
+    color: var(--text-color);
     margin-top: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#clock {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: monospace;
+    color: var(--text-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#dayDisplay {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#clockdatecontainer {
+    text-align: left;
+    margin-left: 1%;
 }

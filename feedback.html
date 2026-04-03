@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
     <link rel="icon" type="image/png" href="images/icon-feedback.png">
+    <script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+            document.body?.classList.add("dark-mode");
+        }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Give Me Your Feedback!</h1>
+        <div class="navnav">
+            <div id="clockdatecontainer">
+                <div id="clock">00:00</div>
+                <div id="dayDisplay"></div>
+            </div>
+            <h1>Give Me Feedback</h1>
+            <img src="images/icon-sun.png" class="darkmodebutton" id="darkbtn" onclick="toggledarkmode()">
+        </div> 
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -67,13 +80,11 @@
         </article>
     </section>
 
-    <br>
-    <hr>
-
     <footer>
         <p>&copy; 2005-2026 Abram. All rights reserved.</p> 
     </footer>
 
+    <script src="jscript.js"></script>
 </body>
 
 </html>
