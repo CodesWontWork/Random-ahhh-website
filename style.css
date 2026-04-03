@@ -7,7 +7,7 @@
 }
 
 html {
-    background-color: #1E2022;
+    background-color: #b9ffc5;
 }
 
 header {
@@ -17,41 +17,58 @@ header {
 header h1 {
     font-size: 2.5em;
     padding: 40px 0 40px 0;
-    color: #ffffff;
-    background-color: #1E2022;
+    color: #000000;
+    background-color: #b9ffc5;
 }
 
 nav {
-    background-color: #52616B;
+    background-color: #b9ffc5;
     padding: 10px 0 10px 0;
     border-radius: 0 0 10px 10px;
     margin: 0 32% 0 32%;
 }
 
-nav a {
+nav a {  
     font-weight: bold;
     border-radius: 10px;
     color: #000;
     text-decoration: none;
     padding: 20px 30px 20px 30px;
     display: inline-block;
-    transition: background-color 0.4s, color 0.2s, transform 0.4s;
+    transition: background-color 0.4s, color 0.2s, transform 0.4s, border 0.2s;
 }
 
 nav a:hover {
-    background-color: #1E2022;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     transform: translateY(-3px);
 }
 
 .active {
-    background-color: #1E2022;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     transform: translateY(-3px);
 }
 
+.darkmodebutton {
+    width: 4%;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    left: 95%;
+    top: 25px;
+    transition: background-color 0.4s, transform 0.2s;
+}
+
+.darkmodebutton:hover {
+    background-color: yellow;
+    transform: scale(110%);
+}
+
 body {
-    background-color: #C9D6DF;;
+    transition: 0.3s;
+    background-color: #ffffff;
 }
 
 .content {
@@ -139,7 +156,7 @@ hr {
 footer {
     text-align: center;
     padding: 40px;
-    background-color: #1E2022;
-    color: #fff;
+    background-color: #b9ffc5;
+    color: black;
     margin-top: 20px;
 }
