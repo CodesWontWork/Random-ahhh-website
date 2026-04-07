@@ -1,12 +1,10 @@
 function toggledarkmode() {
-    let root = document.documentElement; // <html>
-    let body = document.body;
+    let root = document.documentElement;
     let icon = document.querySelector(".darkmodebutton");
 
     root.classList.toggle("dark-mode");
-    body.classList.toggle("dark-mode");
 
-    if (body.classList.contains("dark-mode")) {
+    if (root.classList.contains("dark-mode")) {
         if (icon) icon.src = "images/icon-moon.png";
         localStorage.setItem("theme", "dark");
     } else {
@@ -15,22 +13,16 @@ function toggledarkmode() {
     }
 }
 
-// disable transitions immediately
 document.documentElement.classList.add("no-transition");
 
 window.onload = function () {
-    let savedTheme = localStorage.getItem("theme");
-    let root = document.documentElement;
-    let body = document.body;
     let icon = document.querySelector(".darkmodebutton");
+    let savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
-        root.classList.add("dark-mode");
-        body.classList.add("dark-mode");
-        if (icon) icon.src = "images/icon-moon.png";
+    if (savedTheme === "dark" && icon) {
+        icon.src = "images/icon-moon.png";
     }
 
-    // re-enable transitions AFTER page loads
     setTimeout(() => {
         document.documentElement.classList.remove("no-transition");
     }, 50);
@@ -52,7 +44,6 @@ function updateClock() {
 }
 
 setInterval(updateClock, 1000);
-
 updateClock();
 
 function updateDayDisplay() {
@@ -64,17 +55,65 @@ function updateDayDisplay() {
         "July","August","September","October","November","December"
     ];
 
-    const dayName = weekdays[now.getDay()];    // "Wednesday"
-    const monthName = months[now.getMonth()];  // "March"
-    const dayNumber = now.getDate();           // 1-31
+    const dayName = weekdays[now.getDay()];  
+    const monthName = months[now.getMonth()];  
+    const dayNumber = now.getDate();           
 
     const formatted = `${dayName}, ${monthName} ${dayNumber}`;
 
     document.getElementById("dayDisplay").textContent = formatted;
 }
 
-// initialize immediately
 updateDayDisplay();
-
-// update every hour just in case day changes at midnight
 setInterval(updateDayDisplay, 3600000);
+
+function thanks() {
+    let name = prompt("What's your name?:")
+    alert("Thank You " + name + " For The Feeback!")
+}
+
+function areyousure() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let confirmText = 
+        "Please confirm your details:\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Message: " + message + "\n\n" +
+        "Is this correct?";
+
+    return confirm(confirmText);
+}
+
+function toggleText(btn) {
+    const textElement = document.getElementById("clickable-text");
+    if (textElement.textContent === "Don't click this button -> ") {
+        textElement.textContent = "We're no strangers to love~ You know the rules and so do I~ A full commitment's what I'm thinking of~ You wouldn't get this from any other guy... ";
+    } else {
+        textElement.textContent = "Don't click this button -> ";
+    }
+
+    if (btn.textContent === "Click me") {
+        btn.textContent = "Rickrolled lol";
+    } else {
+        btn.textContent = "Click me";
+    }
+}
+
+let playingsound = false;
+
+function playsound() {
+    let sound = document.getElementById("sound");
+    sound.volume = 0.1
+    sound.currentTime = 0;
+    
+    if (playingsound == false) {
+        sound.play()
+        playingsound = true;
+    } else {
+        sound.pause();
+        playingsound = false;
+    }   
+}

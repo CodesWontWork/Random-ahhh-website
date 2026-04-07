@@ -8,7 +8,6 @@
     <script>
         if (localStorage.getItem("theme") === "dark") {
             document.documentElement.classList.add("dark-mode");
-            document.body?.classList.add("dark-mode");
         }
     </script>
     <link rel="stylesheet" href="style.css">
@@ -25,6 +24,8 @@
             <h1>Give Me Feedback</h1>
             <img src="images/icon-sun.png" class="darkmodebutton" id="darkbtn" onclick="toggledarkmode()">
         </div> 
+        <div id="fakeborderleft"></div>
+        <div id="fakeborderright"></div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -37,32 +38,32 @@
     <section id="feedback">
         <article>
             <p><b><i>Give me your feedback using the form below:</i></b></p>
-            <form>
+            <form onsubmit="return thanks()">
 
                 <h3>How Good Is My Website?:</h3>
 
                 <ul>
-                <input type="radio" id="r1" name="rating" value="1" required>
+                <input type="radio" id="r5" name="rating" value="5" required>
                 <label for="5">(5) superlative</label>
                 </ul>
                 
                 <ul>
-                <input type="radio" id="r2" name="rating" value="2">
+                <input type="radio" id="r4" name="rating" value="4" required>
                 <label for="4">(4) nice</label>
                 </ul>
 
                 <ul>
-                <input type="radio" id="r3" name="rating" value="3">
+                <input type="radio" id="r3" name="rating" value="3" required>
                 <label for="3">(3) meh</label>
                 </ul>
 
                 <ul>
-                <input type="radio" id="r4" name="rating" value="4">
+                <input type="radio" id="r2" name="rating" value="2" required>
                 <label for="2">(2) uhmm..</label>
                 </ul>
 
                 <ul>
-                <input type="radio" id="r5" name="rating" value="5">
+                <input type="radio" id="r1" name="rating" value="1" required>
                 <label for="1">(1) Yikes</label>
                 </ul>
 

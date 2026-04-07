@@ -2,77 +2,111 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Montserrat', sans-serif;
 }
 
 .no-transition * {
     transition: none !important;
 }
 
+/*ROOT VARIABLES*/
 :root {
     --text-color: #000000;
     --text-color-rev: #ffffff;
-    --vibe-color: #b9ffc5;
+    --vibe-color: rgb(255, 192, 227);
     --bg-color: #ffffff;
-    --bg-color2: #f0f0f0;
+    --bg-color2: #fff4fe;
+    --color-change: #000000;
 }
 
 .dark-mode {
     --text-color: #ffffff;
     --text-color-rev: #000000;
-    --vibe-color: #2c3d2f;
+    --vibe-color: rgb(135, 64, 98);
     --bg-color: #141414;
     --bg-color2: #242424;
 }
 
-
+/*LAYOUT*/
 html {
+    overflow-y: scroll;
     background: var(--vibe-color);
     transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.2s, color 0.2s ease;
 }
 
 header {
     text-align: center;
 }
 
+/*NAVIGATION*/
 nav {
-    background-color: var(--vibe-color);
-    padding: 10px 0 10px 0;
+    margin: 0 25%;
+    padding: 10px 0;
+    background: var(--vibe-color);
     border-radius: 0 0 10px 10px;
-    margin: 0 32% 0 32%;
+
+    border-left: 2px solid var(--text-color);
+    border-right: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-nav a {  
-    font-weight: bold;
-    border-radius: 10px;
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 20px 30px 20px 30px;
+nav a {
     display: inline-block;
+    padding: 20px 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 10px;
+
     transition: background-color 0.2s, color 0.2s, transform 0.4s, border 0.2s ease;
 }
 
 nav a:hover {
-    background-color: var(--text-color-rev);
+    background: var(--text-color-rev);
     transform: translateY(-3px);
 }
 
-
 .active {
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     color: var(--text-color);
     transform: translateY(-3px);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/*FAKE BORDERS*/
+#fakeborderleft {
+    position: absolute;
+    border: 1px solid var(--text-color);
+    padding-right: 24.7vw;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#fakeborderright {
+    position: absolute;
+    right: 0%;
+    border: 1px solid var(--text-color);
+    padding-right: 24.7vw;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/*HEADER BAR*/
 .navnav {
     display: flex;
     align-items: center;
     position: relative;
     padding: 1%;
+
     color: var(--text-color);
-    background-color: var(--vibe-color);
+    background: var(--vibe-color);
+
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -85,15 +119,18 @@ nav a:hover {
 
 .navnav img {
     margin-left: auto;
-    width:4%;
+    width: 4%;
 }
 
+/*DARKMODE BUTTON*/
 .darkmodebutton {
     width: 4%;
-    background-color: var(--bg-color);
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
+
+    background: var(--bg-color);
+
     transition: background-color 0.2s, transform 0.2s, filter 0.2s ease;
 }
 
@@ -102,122 +139,149 @@ nav a:hover {
     filter: invert(1);
 }
 
-body {
-    transition: background-color 0.2s, color 0.2s ease;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
+/*CONTENT*/
 .content {
-    margin: 40px 10% 40px 10%;
+    margin: 40px 15%;
     padding: 20px;
+
     border: 3px solid var(--text-color);
     border-radius: 10px;
-    background-color: var(--bg-color2);
+
+    background: var(--bg-color2);
+
     transition: background-color 0.2s, border 0.2s ease;
 }
 
-.content h2, .content h3 ,.content p{
+.content h2,
+.content h3,
+.content p {
     padding: 10px;
 }
 
 .content ul {
-    padding: 0px 40px 20px 60px;
+    padding: 0 40px 20px 60px;
 }
 
 .content li {
     padding: 5px 0;
 }
 
+/*DIVIDER*/
 hr {
-    border: 0;
     height: 1px;
-    background-color: var(--text-color);
+    border: 0;
     margin: 20px 0;
+
+    background: var(--text-color);
+
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-#resume{
-    margin: 40px 100px 40px 100px;
+/*RESUME*/
+#resume {
+    margin: 40px 15%;
     padding: 20px;
+
     border: 2px solid var(--text-color);
     border-radius: 10px;
-    background-color: var(--bg-color2);
+
+    background: var(--bg-color2);
 }
 
-#resume h1, h2{
+#resume h1,
+#resume h2 {
     margin: 20px;
 }
-    
+
 #resume p {
     margin-left: 40px;
 }
 
-#resume ol, ul {
+#resume ol,
+#resume ul {
     margin-left: 40px;
 }
 
-#feedback{
-    text-align: center;
-    margin: 40px 35% 40px 35%;
+/*FEEDBACK*/
+#feedback {
+    margin: 40px 35%;
     padding: 20px;
+
+    text-align: center;
+
     border: 2px solid var(--text-color);
     border-radius: 10px;
-    background-color: var(--bg-color2);
+
+    background: var(--bg-color2);
 }
 
-#feedback ul{
-    text-align: center;
+#feedback ul {
     margin: auto;
-}
-
-#feedback p{
-    margin: 10px 0 30px 0;
-}
-
-#feedback h3{
-    margin: 10px 0 10px 0;
-}
-
-#feedback label{
-    margin: 10px 0 10px 0;
-}
-
-#contact {
     text-align: center;
-    margin: 40px 35% 40px 35%;
+}
+
+#feedback p {
+    margin: 10px 0 30px;
+}
+
+#feedback h3 {
+    margin: 10px 0;
+}
+
+#feedback label {
+    margin: 10px 0;
+}
+
+/*CONTACT*/
+#contact {
+    margin: 40px 35%;
     padding: 20px;
+
+    text-align: center;
+
     border: 2px solid var(--text-color);
     border-radius: 10px;
-    background-color: var(--bg-color2);
+
+    background: var(--bg-color2);
 }
 
+/*FOOTER*/
 footer {
-    text-align: center;
-    padding: 40px;
-    background-color: var(--vibe-color);
-    color: var(--text-color);
     margin-top: 20px;
+    padding: 40px;
+
+    text-align: center;
+
+    border-top: 2px solid var(--text-color);
+
+    background: var(--vibe-color);
+    color: var(--text-color);
+
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+/*CLOCK*/
 #clock {
     font-size: 3rem;
     font-weight: bold;
     font-family: monospace;
     color: var(--text-color);
+
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #dayDisplay {
-    font-family: Arial, sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    color: var(--text-color);
+    font-family: Arial, sans-serif;
     text-align: center;
+
+    color: var(--text-color);
+
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #clockdatecontainer {
-    text-align: left;
     margin-left: 1%;
+    text-align: left;
 }

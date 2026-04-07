@@ -8,7 +8,6 @@
     <script>
         if (localStorage.getItem("theme") === "dark") {
             document.documentElement.classList.add("dark-mode");
-            document.body?.classList.add("dark-mode");
         }
     </script>
     <link rel="stylesheet" href="style.css">
@@ -25,6 +24,8 @@
             <h1>Welcome To My Home Page</h1>
             <img src="images/icon-sun.png" class="darkmodebutton" id="darkbtn" onclick="toggledarkmode()">
         </div> 
+        <div id="fakeborderleft"></div>
+        <div id="fakeborderright"></div>
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
@@ -34,7 +35,7 @@
         </nav>
     </header>
 
-
+    
 
     <section class="content">
         <article>
@@ -50,7 +51,8 @@
                 <li>Responsive design</li>
                 <li>Modern UI</li>
                 <li>Easy navigation</li>
-                <li>And others...</li>
+                <li><span id="clickable-text">Don't click this button -> </span><button onclick="toggleText(this); playsound()">Click me</button></li>
+                <li>And others...</li>   
             </ul>
         </article>
 
@@ -60,7 +62,8 @@
         <p>&copy; 2005-2026 Abram. All rights reserved.</p> 
     </footer>
 
-<script src="jscript.js"></script>
+    <audio id="sound" src="images/sound.mp3"></audio>
+    <script src="jscript.js"></script>
 </body>
 
 </html>

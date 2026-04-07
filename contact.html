@@ -8,7 +8,6 @@
     <script>
         if (localStorage.getItem("theme") === "dark") {
             document.documentElement.classList.add("dark-mode");
-            document.body?.classList.add("dark-mode");
         }
     </script>
     <link rel="stylesheet" href="style.css">
@@ -24,7 +23,9 @@
             </div>
             <h1>Contact Me</h1>
             <img src="images/icon-sun.png" class="darkmodebutton" id="darkbtn" onclick="toggledarkmode()">
-        </div> 
+        </div>
+        <div id="fakeborderleft"></div>
+        <div id="fakeborderright"></div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -37,17 +38,17 @@
     <section id="contact">
         <article>
             <p><b><i>Contact me using the form below:</i></b></p>
-            <form>
+            <form onsubmit="return areyousure()">
                 <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" required>
                 <br><br>
 
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" required>
                 <br><br>
 
                 <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea>
+                <textarea id="message" name="message" required></textarea>
                 <br><br>
 
                 <input type="submit" value="Send">

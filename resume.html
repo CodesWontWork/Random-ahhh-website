@@ -8,7 +8,6 @@
     <script>
         if (localStorage.getItem("theme") === "dark") {
             document.documentElement.classList.add("dark-mode");
-            document.body?.classList.add("dark-mode");
         }
     </script>
     <link rel="stylesheet" href="style.css">
@@ -25,6 +24,8 @@
             <h1>My Resume</h1>
             <img src="images/icon-sun.png" class="darkmodebutton" id="darkbtn" onclick="toggledarkmode()">
         </div> 
+        <div id="fakeborderleft"></div>
+        <div id="fakeborderright"></div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
